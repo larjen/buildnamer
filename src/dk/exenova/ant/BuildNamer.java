@@ -293,8 +293,9 @@ public class BuildNamer extends Task {
 	}
 
 	private String getTimeStamp(){
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-ddTHHmm");
-		return simpleDateFormat.format(new Date());
+		SimpleDateFormat simpleDateFormatDate = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat simpleDateFormatHours = new SimpleDateFormat("HHmm");
+		return simpleDateFormatDate.format(new Date())+"T"+simpleDateFormatHours.format(new Date());
 	}
 	
 	protected String getRandomFromArray(String[] source){

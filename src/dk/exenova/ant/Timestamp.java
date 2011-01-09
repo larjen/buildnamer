@@ -14,8 +14,9 @@ public class Timestamp extends Task {
 	}
 
 	private String getTimeStamp(){
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MMTdd-HHmm");
-		return simpleDateFormat.format(new Date());
+		SimpleDateFormat simpleDateFormatDate = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat simpleDateFormatHours = new SimpleDateFormat("HHmm");
+		return simpleDateFormatDate.format(new Date())+"T"+simpleDateFormatHours.format(new Date());
 	}
 
 	public void setProperty(String property) {
