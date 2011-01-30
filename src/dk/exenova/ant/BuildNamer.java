@@ -289,13 +289,7 @@ public class BuildNamer extends Task {
 	@Override
 	public void execute() throws BuildException {
 		
-		getProject().setNewProperty(property, getTimeStamp()+"-"+getRandomFromArray(firstName)+"-"+String.valueOf(getRandomFromArray(firstName)));
-	}
-
-	private String getTimeStamp(){
-		SimpleDateFormat simpleDateFormatDate = new SimpleDateFormat("yyyy-MM-dd");
-		SimpleDateFormat simpleDateFormatHours = new SimpleDateFormat("HHmm");
-		return simpleDateFormatDate.format(new Date())+"T"+simpleDateFormatHours.format(new Date());
+		getProject().setNewProperty(property, getRandomFromArray(firstName)+"-"+String.valueOf(getRandomFromArray(firstName)));
 	}
 	
 	protected String getRandomFromArray(String[] source){
